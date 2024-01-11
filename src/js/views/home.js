@@ -1,15 +1,32 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState } from "react";
 import "../../styles/home.css";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+	const [lista, setLista] = useState([
+		{
+			"address": "",
+			"agenda_slug": "juana",
+			"email": "",
+			"full_name": "",
+			"id": 11048897850,
+			"phone": ""
+		},
+		{
+			"address": "",
+			"agenda_slug": "juana",
+			"email": "",
+			"full_name": "",
+			"id": 20656686233,
+			"phone": ""
+		}
+	])
+	return (
+		<div className= "text-center mt-5">
+			<ul>
+				{lista.map((element, index) => <li key = {index}>{element.full_name}</li>)}
+			</ul>
+
+		</div>
+		
+	)
+};
